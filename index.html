@@ -29,7 +29,7 @@ body{margin:0;background:#17110f;font-family:Manrope,system-ui,sans-serif;-webki
 html{scroll-behavior:smooth}
 a{color:#e7c9b0;text-decoration:none}a:hover{color:#fff}
 :focus-visible{outline:2px solid #e7c9b0;outline-offset:3px}
-.hero-img{position:absolute;top:76px;left:0;right:0;bottom:0;overflow:hidden}
+.hero-img{position:absolute;top:76px;right:0;bottom:0;left:auto;width:min(62%,calc((max(720px,100vh) - 76px) * 1.777));overflow:hidden}
 .kb{animation:kb 9s cubic-bezier(.2,.7,.2,1) both}
 @keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
 .m-only{display:none}
@@ -49,7 +49,7 @@ a{color:#e7c9b0;text-decoration:none}a:hover{color:#fff}
 @keyframes st{from{opacity:0;transform:scale(.3) rotate(-40deg)}to{opacity:1;transform:none}}
 .pulse{animation:pl 2.4s ease-out infinite}
 @keyframes pl{0%{box-shadow:0 0 0 0 rgba(122,31,53,.6)}70%{box-shadow:0 0 0 16px rgba(122,31,53,0)}100%{box-shadow:0 0 0 0 rgba(122,31,53,0)}}
-.hero-fade{position:absolute;inset:0;background:linear-gradient(90deg,#17110f 0%,rgba(23,17,15,.88) 30%,rgba(23,17,15,.2) 58%,rgba(23,17,15,0) 75%),linear-gradient(0deg,rgba(23,17,15,.7) 0%,rgba(23,17,15,0) 30%)}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(90deg,#17110f 0%,rgba(23,17,15,.75) 14%,rgba(23,17,15,0) 40%),linear-gradient(0deg,rgba(23,17,15,.45) 0%,rgba(23,17,15,0) 18%)}
 
 .nl{position:relative;display:inline-block;padding:8px 0;transition:color .3s}
 .nl::after{content:'';position:absolute;left:50%;right:50%;bottom:2px;height:1.5px;background:#e7c9b0;transition:left .35s cubic-bezier(.2,.7,.2,1),right .35s cubic-bezier(.2,.7,.2,1)}
@@ -91,7 +91,7 @@ a{color:#e7c9b0;text-decoration:none}a:hover{color:#fff}
 .stp{transition:transform .4s}.stp:hover{transform:translateY(-6px)}
 .sc{animation:scg 4.5s ease-in-out infinite}
 @keyframes scg{0%,100%{box-shadow:0 0 0 0 rgba(231,201,176,0)}50%{box-shadow:0 0 0 8px rgba(231,201,176,.12)}}
-.mapc{position:relative;display:block;overflow:hidden;min-height:340px;background:#ece3d9;border:1px solid rgba(231,201,176,.35)}
+.mapc{position:relative;display:block;overflow:hidden;flex:1;min-height:280px;background:#ece3d9;border:1px solid rgba(231,201,176,.35)}
 .mapc .road{position:absolute;background:#fff}
 .mapc:hover .pin{transform:translate(-50%,-110%) scale(1.15)}
 .pin{position:absolute;left:52%;top:50%;transform:translate(-50%,-100%);transition:transform .4s cubic-bezier(.3,1.6,.5,1);animation:pb 2s ease-in-out infinite}
@@ -130,7 +130,7 @@ a[href*="wa.me"]:not(.card){white-space:nowrap;text-align:center;font-size:15px!
 .m-eb{order:1;align-self:stretch!important;padding:0 16px 18px!important;display:flex;justify-content:center}
 .eb{flex-wrap:wrap;justify-content:center;border-radius:18px!important;padding:10px 16px!important;text-align:center}
 
-.hero-img{order:2;position:relative!important;top:0!important;height:92vw}
+.hero-img{order:2;position:relative!important;top:0!important;left:0!important;width:100%!important;height:92vw}
 .m-h1{order:3;padding:6px 20px 0;margin-top:-28px!important;position:relative;z-index:2}
 .m-tx{order:4;padding:16px 20px 0;font-size:17px!important}
 .m-bt{order:5;padding:22px 20px 52px}
@@ -180,7 +180,7 @@ header nav{padding:0 16px!important;height:68px!important}
 <main>
 <section id="inicio" class="hero" style="position:relative;min-height:max(720px,100vh);display:flex;align-items:center">
   <div class="hero-img">
-    <img src="assets/bruna-francisco-advogada-leme-sp.webp" width="1672" height="941" alt="Dra. Bruna Francisco, advogada em Leme/SP, em seu escritório" fetchpriority="high" class="kb" style="width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block">
+    <img src="assets/bruna-francisco-advogada-leme-sp.webp" width="1672" height="941" alt="Dra. Bruna Francisco, advogada em Leme/SP, em seu escritório" fetchpriority="high" class="kb" style="width:100%;height:100%;object-fit:cover;object-position:100% 50%;display:block">
     <div class="hero-fade"></div>
   </div>
   <div class="hero-txt" style="position:relative;z-index:2;max-width:1320px;width:100%;margin:0 auto;padding:120px clamp(20px,4vw,48px) 80px">
@@ -498,10 +498,14 @@ header nav{padding:0 16px!important;height:68px!important}
 </section>
 
 <section id="contato" class="sec" style="background:#17110f;padding:clamp(88px,9vw,140px) clamp(20px,4vw,48px)">
-  <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 80px;align-items:start">
-    <div style="display:flex;flex-direction:column;gap:22px">
-      <h2 class="h2" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,4vw,56px);line-height:1.1">Conte o seu caso. A Dra. Bruna responde pessoalmente.</h2>
+  <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 80px;align-items:stretch">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 class="h2" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,2.7vw,42px);line-height:1.12;text-wrap:balance">Conte o seu caso. A Dra. Bruna responde pessoalmente.</h2>
       <p style="margin:0;font-size:18px;line-height:1.7;color:#cbb8a8">Escritório em Leme/SP e atendimento online para todo o Brasil.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:16px">
+        <li><a href="https://wa.me/5519981818844?text=Ol%C3%A1%2C%20Dra.%20Bruna%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" style="color:#eee3da">WhatsApp (19) 98181-8844</a></li>
+        <li><a href="https://www.instagram.com/brunafrancisco.adv/" target="_blank" rel="noopener" style="color:#eee3da">Instagram @brunafrancisco.adv</a></li>
+      </ul>
       <div style="padding:16px 20px;border:1px solid rgba(231,201,176,.3);display:flex;flex-direction:column;gap:6px">
         <p style="margin:0;font-size:14px;font-weight:700;color:#e7c9b0">Endereço</p>
         <address style="font-style:normal;font-size:16px;line-height:1.5;color:#f6efe8">Av. Carlo Bonfanti, 389 · Centro, Leme/SP · CEP 13610-238</address>
@@ -519,10 +523,6 @@ header nav{padding:0 16px!important;height:68px!important}
         <span class="pin" aria-hidden="true"><svg width="46" height="58" viewBox="0 0 24 30"><path d="M12 0C5.4 0 0 5.2 0 11.7 0 20 12 30 12 30s12-10 12-18.3C24 5.2 18.6 0 12 0z" fill="#7a1f35"></path><circle cx="12" cy="11.5" r="4.5" fill="#fff"></circle></svg></span>
         <span class="lbl" style="position:absolute;left:16px;right:16px;bottom:16px;padding:14px 18px;background:#fff;color:#2a1d1a;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.15)"><span>Dra. Bruna Francisco · ★ 5,0</span><span>Abrir no Google Maps →</span></span>
       </a>
-      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:17px">
-        <li><a href="https://wa.me/5519981818844?text=Ol%C3%A1%2C%20Dra.%20Bruna%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" style="color:#eee3da">WhatsApp (19) 98181-8844</a></li>
-        <li><a href="https://www.instagram.com/brunafrancisco.adv/" target="_blank" rel="noopener" style="color:#eee3da">Instagram @brunafrancisco.adv</a></li>
-      </ul>
     </div>
     <form id="fcontato" data-reveal="" novalidate="" aria-labelledby="form-titulo" style="background:#f6efe8;color:#2a1d1a;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:20px">
       <h3 id="form-titulo" style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.1">Fale com a advogada</h3>
