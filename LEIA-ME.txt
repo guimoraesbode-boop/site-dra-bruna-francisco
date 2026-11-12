@@ -1,0 +1,10 @@
+SITE DRA. BRUNA FRANCISCO - COMO PUBLICAR NA VERCEL
+
+1. Antes de subir, troque "https://SEU-DOMINIO.com.br" pelo domínio real em:
+   index.html, robots.txt e sitemap.xml (use "Localizar e substituir").
+   Troque também "[OAB/SP 000.000]" e "[FORMAÇÃO, PÓS-GRADUAÇÃO E TEMPO DE ATUAÇÃO]" no index.html.
+2. Acesse vercel.com > Add New > Project > arraste esta pasta (ou suba num repositório GitHub e importe).
+   Framework: "Other". Não precisa de build.
+3. Em Settings > Domains, conecte o domínio.
+4. Google Search Console: adicione o domínio e envie /sitemap.xml.
+5. Google Meu Negócio: em "Website", coloque o link do site.
